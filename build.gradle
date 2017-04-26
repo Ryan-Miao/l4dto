@@ -1,0 +1,32 @@
+plugins {
+    id 'java'
+    id 'net.ltgt.apt' version '0.9'
+}
+
+group 'com.test'
+version '1.0-SNAPSHOT'
+
+
+ext {
+    mapstructVersion = "1.1.0.Final"
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'fr.xebia.extras', name: 'selma-processor', version: '0.15'
+    compile group: 'fr.xebia.extras', name: 'selma', version: '0.15'
+
+    compile "org.mapstruct:mapstruct:${mapstructVersion}"
+    apt "org.mapstruct:mapstruct-processor:${mapstructVersion}"
+
+
+
+    compile group: 'junit', name: 'junit', version: '4.11'
+}
